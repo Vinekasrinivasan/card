@@ -6,10 +6,10 @@ const NavBar: React.FC = () => {
   return (
     <nav className="bg-white p-2 shadow-md sticky top-0 z-50">
       <div className="container mx-auto flex justify-between items-center">
-        {/* Logo or Title */}
+
         <h1 className="text-xl md:text-2xl font-bold">My Store</h1>
 
-        {/* Search Bar */}
+     
         <div className="relative w-1/2 md:w-1/3 hidden sm:block">
           <input
             type="text"
@@ -18,7 +18,7 @@ const NavBar: React.FC = () => {
           />
         </div>
 
-        {/* Nav Links */}
+   
         <div className="flex items-center space-x-4">
           <Link href="/" className="text-gray-700 hover:text-blue-600 flex items-center">
             <FaHome className="mr-1" />
