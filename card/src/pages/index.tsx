@@ -15,8 +15,6 @@ interface Product {
 
 const Home: React.FC = () => {
   const [products, setProducts] = useState<Product[]>([]);
-
-  // Fetch product data using useEffect and useState
   useEffect(() => {
     const fetchProducts = async () => {
       const res = await fetch("https://dummyjson.com/products");
