@@ -13,18 +13,12 @@ interface Product {
   thumbnail: string;
 }
 
-const Home: React.FC = () => {
-  const [products, setProducts] = useState<Product[]>([]);
-  useEffect(() => {
-    const fetchProducts = async () => {
-      const res = await fetch("https://dummyjson.com/products");
-      const { products } = await res.json();
-      setProducts(products);
-    };
 
-    fetchProducts();
-  }, []);
+interface HomeProps {
+  products: Product[];
+}
 
+const Home: React.FC<HomeProps> = ({ products }) => {
   return (
     <div>
       <NavBar />
@@ -32,5 +26,16 @@ const Home: React.FC = () => {
     </div>
   );
 };
+
+export async function getStaticProps() {
+  const res = await fetch("https://dummyjson.com/products");
+  const { products } = await res.json();
+
+  return {
+    props: {
+      products,
+    },
+  };
+}
 
 export default Home;
