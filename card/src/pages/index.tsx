@@ -1,7 +1,6 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import NavBar from "./navbar";
 import ProductList from "./product";
-
 
 interface Product {
   id: number;
@@ -12,7 +11,6 @@ interface Product {
   brand: string;
   thumbnail: string;
 }
-
 
 interface HomeProps {
   products: Product[];
